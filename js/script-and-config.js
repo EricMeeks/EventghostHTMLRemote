@@ -25,7 +25,7 @@ function showStatus(status) {
 		$('#off').hide();
 	}
 	$( "button" ).each(function( index ) {
-		if (this.attributes['data-action'].nodeValue != 'power.toggle') {
+		if (this.attributes['data-action'] && this.attributes['data-action'].nodeValue != 'power.toggle') {
 			this.disabled = (status != 'On');
 		}
 	});
