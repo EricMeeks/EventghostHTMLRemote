@@ -3,16 +3,32 @@ language = 'en';
 
 var lastUpdate = 0;
 
-function statusWait() {
-	$('#status').text('System is ...');
-	$('#toggle').hide(); 
-	$('#togglerotate').show();
+function turningOn() {
+	$('#on').hide();
+	$('#on-rotate').show();
+}
+
+function turningOff() {
+	$('#off').hide();
+	$('#off-rotate').show();
 }
 
 function showStatus(status) {
-	$('#status').text('System is ' + status);
-	$('#togglerotate').hide();
-	$('#toggle').show(); 
+	$('#on-rotate').hide();
+	$('#off-rotate').hide();
+	if (status == 'On') {
+		$('#on').hide();
+		$('#off').show();
+	}
+	else {
+		$('#on').show();
+		$('#off').hide();
+	}
+	$( "button" ).each(function( index ) {
+		if (this.attributes['data-action'].nodeValue != 'power.toggle') {
+			this.disabled = (status != 'On');
+		}
+	});
 }
 
 
