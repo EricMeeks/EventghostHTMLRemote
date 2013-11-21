@@ -3,6 +3,19 @@ language = 'en';
 
 var lastUpdate = 0;
 
+function statusWait() {
+	$('#status').text('System is ...');
+	$('#toggle').hide(); 
+	$('#togglerotate').show();
+}
+
+function showStatus(status) {
+	$('#status').text('System is ' + status);
+	$('#togglerotate').hide();
+	$('#toggle').show(); 
+}
+
+
 $(document).ready(function() {
 						   
     $("*[data-action]").bind('touchend', function() {
@@ -16,14 +29,16 @@ $(document).ready(function() {
         $.ajax({
             url: serverUrl+'/ajax.html?'+action,
             cache: false,
-            success: function(element) {
+            success: [function(element) {
                 if (element.attr("href")) {
                     setTimeout(function() {
                         window.location=element.attr("href");
                     }, 500);
                 }
                 return true;
-            }(element)
+            }(element), function(status) {
+            	showStatus(status);
+            }]
         });
        
     });
@@ -42,4 +57,6 @@ $(document).ready(function() {
             });
         }
     });
+    
+    showStatus('{{eg.globals.yamaha}}');
 });
