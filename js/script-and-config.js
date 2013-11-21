@@ -58,5 +58,4 @@ $(document).ready(function() {
         }
     });
     
-    showStatus('{{eg.globals.yamaha}}');
 });
