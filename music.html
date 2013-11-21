@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTPC Remote - Music</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/script-and-config.js"></script>
+</head>
+<body>
+	<div class="hidden-phone" id="nav-bar-desktop">
+		<ul class="desktop-nav">
+			<li><a href="index.html">Living Room</a></li>
+			<li><a href="bedroom.html">Bedroom</a></li>
+			<li>Music</li>
+		</ul>
+	</div>
+	<div class="visible-phone" id="nav-bar-phone">
+		<ul class="phone-nav">
+			<li><a href="index.html">Living Room</a></li>
+			<li><a href="bedroom.html">Bedroom</a></li>
+			<li>Music</li>
+		</ul>
+	</div>
+
+	<!------------------------------------------- Desktop -->
+	
+	<div id="desktop" class="hidden-phone">
+		<h2>Inputs</h2>
+		<div>
+			<button style="margin-left: 29%;" data-action="amp_main" class="large"><i class="icon-collapse"></i><span class="btn-label">Amplifier</span></button><!--
+			--><button style="margin-left: 2%;" data-action="amp_bluetooth" class="large"><i class="icon-collapse"></i><span class="btn-label">Bluetooth</span></button>
+		</div>
+		<h2>Speakers</h2>
+		<div>
+			<button style="margin-left: 29%;" data-action="amp_zonea" class="large"><i class="icon-off"></i><span class="btn-label">Inside</span></button><!--
+			--><button style="margin-left: 2%;" data-action="amp_zoneb" class="large"><i class="icon-off"></i><span class="btn-label">Patio</span></button>
+		</div>
+		<h2>Controls</h2>
+		<div>
+			<button style="margin-left: 35%;" data-action="button_volumeup"><i class="icon-volume-up"></i></button><!--
+			--><button data-action="button_volumedown"><i class="icon-volume-down"></i></button><!--
+			--><button data-action="amp_mute"><i class="icon-volume-off red"></i></button>
+		</div>
+		<div>
+			<button style="margin-left: 40%;" data-action="button_pandora"><img src="images/icon_pandora.svg" style="width: auto; height: 30px;"/></button><!--
+			--><button data-action="button_grooveshark"><img src="images/icon_grooveshark.svg" style="width: auto; height: 30px;"/></button>
+		</div>
+	</div>
+
+	<!------------------------------------------- Mobile -->
+
+	<div class="visible-phone">
+	<div id="phone">
+		<h2>Inputs</h2>
+		<div>
+			<button style="margin-left: 9%;" data-action="amp_main" class="large"><i class="icon-collapse"></i><span class="btn-label">Amplifier</span></button><!--
+			--><button style="margin-left: 2%;" data-action="amp_bluetooth" class="large"><i class="icon-collapse"></i><span class="btn-label">Bluetooth</span></button>
+		</div>
+		<h2>Speakers</h2>
+		<div>
+			<button style="margin-left: 9%;" data-action="amp_zonea" class="large"><i class="icon-off"></i><span class="btn-label">Inside</span></button><!--
+			--><button style="margin-left: 2%;" data-action="amp_zoneb" class="large"><i class="icon-off"></i><span class="btn-label">Patio</span></button>
+		</div>
+		<h2>Controls</h2>
+		<div>
+			<button style="margin-left: 20%;" class="phone5" data-action="button_volumeup"><i class="icon-volume-up"></i></button><!--
+			--><button class="phone5" data-action="button_volumedown"><i class="icon-volume-down"></i></button><!--
+			--><button class="phone5" data-action="amp_mute"><i class="icon-volume-off red"></i></button>
+		</div>
+		<div>
+			<button style="margin-left: 30%;" class="phone5" data-action="button_pandora"><img src="images/icon_pandora.svg" style="width: auto; height: 20px;"/></button><!--
+			--><button class="phone5" data-action="button_grooveshark"><img src="images/icon_grooveshark.svg" style="width: auto; height: 20px;"/></button>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTPC Remote - Bedroom TV</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/script-and-config.js"></script>
+    <script type="text/javascript">
+	    $(document).ready(function(){
+		    $('#phone-num').hide();
+		    $('#num').click(function() {
+			    $('#phone').hide();
+			    $('#phone-num').show();
+		    });
+		    $('#num-back').click(function() {
+			    $('#phone-num').hide();
+			    $('#phone').show();
+		    });
+	    });
+    </script>
+</head>
+<body>
+	<div class="hidden-phone" id="nav-bar-desktop">
+		<ul class="desktop-nav">
+			<li><a href="index.html">Living Room</a></li>
+			<li>Bedroom</li>
+			<li><a href="music.html">Music</a></li>
+		</ul>
+	</div>
+	<div class="visible-phone" id="nav-bar-phone">
+		<ul class="phone-nav">
+			<li><a href="index.html">Living Room</a></li>
+			<li>Bedroom</li>
+			<li><a href="music.html">Music</a></li>
+		</ul>
+	</div>
+
+	<!------------------------------------------- Desktop -->
+	
+	<div id="desktop" class="hidden-phone">
+		<div>
+			<button data-action="xbox_power"><i class="icon-off green"></i></button><!--
+			--><button data-action="xbox_poweroff"><i class="icon-off red"></i></button><!--
+			--><button style="margin-left: 20%;" data-action="xbox"><img src="images/icon_xbox.svg" width="30px" height="30px"/></button><!--
+			
+			--><button style="margin-left: 10%;" data-action="xbox_play"><i class="icon-play green"></i></button><!--
+			--><button data-action="xbox_pause"><i class="icon-pause"></i></button><!--
+			--><button data-action="xbox_stop"><i class="icon-stop"></i></button><!--
+			--><button data-action="xbox_record"><i class="icon-circle red"></i></button>
+		</div>
+		<div>
+			<button data-action="xbox_channelup"><i class="icon-plus"></i></button><!--
+			--><button data-action="xbox_wmc"><i class="icon-home green"></i></button><!--
+			--><button class="direction" data-action="xbox_up"><i class="icon-chevron-up"></i></button><!--
+			--><button data-action="xbox_info"><i class="icon-info-sign"></i></button><!--
+			--><button data-action="xbox_volumeup"><i class="icon-volume-up"></i></button><!--
+			
+			--><button style="margin-left: 10%;" data-action="xbox_skipback"><i class="icon-step-backward"></i></button><!--
+			--><button data-action="xbox_rewind"><i class="icon-fast-backward"></i></button><!--
+			--><button data-action="xbox_forward"><i class="icon-fast-forward"></i></button><!--
+			--><button data-action="xbox_skipforward"><i class="icon-step-forward"></i></button>
+		</div>
+		<div>
+			<button data-action="xbox_channeldown"><i class="icon-minus"></i></button><!--
+			--><button class="direction" data-action="xbox_left"><i class="icon-chevron-left"></i></button><!--
+			--><button data-action="xbox_ok">ok</button><!--
+			--><button class="direction" data-action="xbox_right"><i class="icon-chevron-right"></i></button><!--
+			--><button data-action="xbox_volumedown"><i class="icon-volume-down"></i></button><!--
+			
+			--><button style="margin-left: 15%" data-action="xbox_1">1</button><!--
+			--><button data-action="xbox_2">2</button><!--
+			--><button data-action="xbox_3">3</button>
+		</div>
+		<div>
+			<button data-action="xbox_back"><i class="icon-reply"></i></button><!--
+			--><button style="margin-left: 10%;" class="direction" data-action="xbox_down"><i class="icon-chevron-down"></i></button><!--
+			--><button style="margin-left: 10%;" data-action="xbox_mute"><i class="icon-volume-off red"></i></button><!--
+			
+			--><button style="margin-left: 15%" data-action="xbox_4">4</button><!--
+			--><button data-action="xbox_5">5</button><!--
+			--><button data-action="xbox_6">6</button>
+		</div>
+		<div>
+			<button style="margin-left: 65%" data-action="xbox_7">7</button><!--
+			--><button data-action="xbox_8">8</button><!--
+			--><button data-action="xbox_9">9</button>
+		</div>
+		<div>
+			<button style="margin-left: 15%;" class="desktop" data-action="xbox_livetv"><i class="icon-desktop green"></i></button><!--
+			--><button class="desktop" data-action="xbox_guide"><i class="icon-tasks"></i></button><!--
+			--><button style="margin-left: 40%" class="desktop" data-action="xbox_0">0</button>
+		</div>
+	</div>
+
+	<!------------------------------------------- Mobile -->
+
+	<div class="visible-phone">
+	<div id="phone">
+		<div>
+			<button class="phone5" data-action="xbox_power"><i class="icon-off green"></i></button><!--
+			--><button class="phone5" data-action="xbox_poweroff"><i class="icon-off red"></i></button><!--
+			--><button style="margin-left: 20%;" class="phone5" data-action="xbox_poweroff"><img src="images/icon_xbox.svg" width="20px" height="20px"/></button><!--
+			--><button class="phone5" id="num">#</button>
+		</div>
+		<div>
+			<button class="phone5" data-action="xbox_channelup"><i class="icon-plus"></i></button><!--
+			--><button class="phone5" data-action="xbox_wmc"><i class="icon-home green"></i></button><!--
+			--><button class="phone5 direction" data-action="xbox_up"><i class="icon-chevron-up"></i></button><!--
+			--><button class="phone5" data-action="xbox_info"><i class="icon-info-sign"></i></button><!--
+			--><button class="phone5" data-action="xbox_volumeup"><i class="icon-volume-up"></i></button>
+		</div>
+		<div>
+			<button class="phone5" data-action="xbox_channeldown"><i class="icon-minus"></i></button><!--
+			--><button class="phone5 direction" data-action="xbox_left"><i class="icon-chevron-left"></i></button><!--
+			--><button class="phone5" data-action="xbox_ok">ok</button><!--
+			--><button class="phone5 direction" data-action="xbox_right"><i class="icon-chevron-right"></i></button><!--
+			--><button class="phone5" data-action="xbox_volumedown"><i class="icon-volume-down"></i></button>
+		</div>
+		<div>
+			<button class="phone5" data-action="xbox_back"><i class="icon-reply"></i></button><!--
+			--><button style="margin-left: 20%;" class="phone5 direction" data-action="xbox_down"><i class="icon-chevron-down"></i></button><!--
+			--><button style="margin-left: 20%;" class="phone5" data-action="xbox_mute"><i class="icon-volume-off red"></i></button>
+		</div>
+		<hr>
+		<div>
+			<button class="phone4" data-action="xbox_play"><i class="icon-play green"></i></button><!--
+			--><button class="phone4" data-action="xbox_pause"><i class="icon-pause"></i></button><!--
+			--><button class="phone4" data-action="xbox_stop"><i class="icon-stop"></i></button><!--
+			--><button class="phone4" data-action="xbox_record"><i class="icon-circle red"></i></button>
+		</div>
+		<div>
+			<button class="phone4" data-action="xbox_rewind"><i class="icon-fast-backward"></i></button><!--
+			--><button class="phone4" data-action="xbox_skipback"><i class="icon-step-backward"></i></button><!--
+			--><button class="phone4" data-action="xbox_skipforward"><i class="icon-step-forward"></i></button><!--
+			--><button class="phone4" data-action="xbox_forward"><i class="icon-fast-forward"></i></button>
+		</div>
+		<hr>
+		<div>
+			<button style="margin-left: 25%;" class="phone4" data-action="xbox_livetv"><i class="icon-desktop green"></i></button><!--
+			--><button class="phone4" data-action="xbox_guide"><i class="icon-tasks"></i></button>
+		</div>
+	</div>
+	</div>
+	
+	<div class="visible-phone">
+	<div id="phone-num">
+		<div>
+			<button style="margin-left: 80%;" class="phone5" id="num-back"><i class="icon-reply"></i></button>
+		</div>
+		<div>
+			<button style="margin-left: 20%;" class="phone5" data-action="xbox_1">1</button><!--
+			--><button class="phone5" data-action="xbox_2">2</button><!--
+			--><button class="phone5" data-action="xbox_3">3</button>
+		</div>
+		<div>
+			<button style="margin-left: 20%;" class="phone5" data-action="xbox_4">4</button><!--
+			--><button class="phone5" data-action="xbox_5">5</button><!--
+			--><button class="phone5" data-action="xbox_6">6</button>
+		</div>
+		<div>
+			<button style="margin-left: 20%;" class="phone5" data-action="xbox_7">7</button><!--
+			--><button class="phone5" data-action="xbox_8">8</button><!--
+			--><button class="phone5" data-action="xbox_9">9</button>
+		</div>
+		<div>
+			<button style="margin-left: 40%;" class="phone5" data-action="xbox_0">0</button>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
