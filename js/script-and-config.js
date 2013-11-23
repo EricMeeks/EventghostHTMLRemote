@@ -1,29 +1,44 @@
+var currentStatus = 'Off';
+
 var serverUrl = '';
 language = 'en';
 
 var lastUpdate = 0;
 
-function turningOn() {
-	$('#on').hide();
-	$('#on-rotate').show();
-}
+var powerImages = {};
+powerImages['On'] ='images/exit.png';
+powerImages['Off'] ='images/on.png';
+powerImages['TurningOn'] ='images/on-rotate.gif';
+powerImages['TurningOff'] ='images/exit-rotate.gif';
 
-function turningOff() {
-	$('#off').hide();
-	$('#off-rotate').show();
+function openFoobar() {
+	if (currentStatus == 'On') {
+		window.open('http://192.168.0.210:8888/ajquery/index.html', '_blank');
+	}
 }
 
 function showStatus(status) {
-	$('#on-rotate').hide();
-	$('#off-rotate').hide();
-	if (status == 'On') {
-		$('#on').hide();
-		$('#off').show();
+	// For debugging
+	if (status == '{{eg.globals.yamaha}}') {
+		status = currentStatus;
+		currentStatus = currentStatus.indexOf('Off') == -1 ? 'On' : 'Off';
 	}
 	else {
-		$('#on').show();
-		$('#off').hide();
+		currentStatus = status;
 	}
+	$( "img" ).each(function( index ) {
+		for (var key in powerImages) {
+			if (this.src.indexOf(powerImages[key]) != -1) {
+				if (key == status) {
+					$(this).show();
+					$(this).parent().blur();
+				}
+				else {
+					$(this).hide();
+				}
+			}			
+		}
+	});
 	$( "button" ).each(function( index ) {
 		if (this.attributes['data-action'] && this.attributes['data-action'].nodeValue != 'power.toggle') {
 			this.disabled = (status != 'On');
@@ -39,8 +54,8 @@ $(document).ready(function() {
     });
     $("*[data-action]").bind('click', function() {
         var action = $(this).attr("data-action");
-        var href = $(this).attr("href");
         var element = $(this);
+        element.blur();
         
         $.ajax({
             url: serverUrl+'/ajax.html?'+action,
@@ -54,6 +69,7 @@ $(document).ready(function() {
                 return true;
             }(element), function(status) {
             	showStatus(status);
+                element.blur();
             }]
         });
        

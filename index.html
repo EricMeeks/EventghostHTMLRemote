@@ -14,30 +14,55 @@
     <script type="text/javascript">
     $(document).ready(function() {
         showStatus('{{eg.globals.yamaha}}');
+        //showStatus('On');
     });
     </script>
     </head>
     <body bgcolor="#E6E6FA">
-	<div>
+
+	<!------------------------------------------- Desktop -->
+	<div id="desktop" class="hidden-phone">
 		<div>
-  			<button style="margin-left: 15%; background: transparent; border: none !important; width: 135px;"/>
-  			<button style="margin-top: 2%;" "class="phone5" data-action="power.toggle"  id="power.toggle">
-  				<img src="images/on.png" style="display: none;" onclick="turningOn()" id="on"/>
-  				<img src="images/exit.png" style="display: none;" onclick="turningOff()" id="off"/>
-  				<img src="images/on-rotate.gif" style="display: none;" id="on-rotate"/>
-  				<img src="images/exit-rotate.gif" style="display: none;" id="off-rotate"/>
+  			<button style="margin-left: 25.4%;" data-action="power.toggle">
+  				<img src="images/on.png" onclick="showStatus('TurningOn')"/>
+  				<img src="images/exit.png" onclick="showStatus('TurningOff')" />
+  				<img src="images/on-rotate.gif" />
+  				<img src="images/exit-rotate.gif" />
   			</button>
         </div>
         <div>
-  			<button style="margin-left: 15%;" class="phone5" data-action="volume.up"  id="volume.up"><img src="images/edit_add.png" style="width: auto;"/></button>
-  			<button class="phone5" data-action="volume.down" id="volume.down"><img src="images/edit_remove.png" style="width: auto;"/></button>
-  			<button class="phone5" data-action="volume.mute" id="volume.mute"><img src="images/kmixdocked_mute.png" style="width: auto;"/></button>
+  			<button style="margin-left: 15%;" data-action="volume.mute" ><img src="images/kmixdocked_mute.png"/></button>
+  			<button data-action="volume.down" ><img src="images/edit_remove.png"/></button>
+  			<button data-action="volume.up" ><img src="images/edit_add.png"/></button>
     	</div>
     	<div>
-  			<button style="margin-left: 15%; background: transparent; border: none !important; width: 68px;"/>
-  			<button class="phone5" data-action="device.bluetooth" id="device.bluetooth"><img src="images/kbtobexclient.png" style="width: auto;"/></button>
-  			<button class="phone5" data-action="device.foobar" id="device.foobar"><img src="images/Foobar_small.png" style="width: 128px;" onclick="javascript: window.open('http://192.168.0.210:8888/ajquery/index.html', '_blank')"/></button>
+  			<button style="margin-left: 20%;" data-action="device.bluetooth"><img src="images/kbtobexclient.png" style="width: auto;"/></button>
+  			<button data-action="device.foobar"><img src="images/Foobar_small.png" onclick="javascript: openFoobar()"/></button>
 		</div>
+	</div>
+
+	<!------------------------------------------- Mobile -->
+
+	<div class="visible-phone">
+	<div id="phone">
+		<div>
+  			<button style="margin-top: 2%; margin-left: 15%;" data-action="power.toggle">
+  				<img src="images/on.png" style="display: none;" onclick="showStatus('TurningOn')"/>
+  				<img src="images/exit.png" style="display: none;" onclick="showStatus('TurningOff')"/>
+  				<img src="images/on-rotate.gif" style="display: none;"/>
+  				<img src="images/exit-rotate.gif" style="display: none;"/>
+  			</button>
+  			<button data-action="volume.mute"><img src="images/kmixdocked_mute.png"/></button>
+        </div>
+        <div>
+  			<button style="margin-left: 15%;" data-action="volume.down"><img src="images/edit_remove.png" style="width: auto;"/></button>
+  			<button data-action="volume.up"><img src="images/edit_add.png" /></button>
+    	</div>
+    	<div>
+  			<button style="margin-left: 15%;" data-action="device.bluetooth"><img src="images/kbtobexclient.png" /></button>
+  			<button data-action="device.foobar"><img src="images/Foobar_small.png" onclick="javascript: openFoobar()"/></button>
+		</div>
+	</div>
 	</div>
 	</body>
 </html>
